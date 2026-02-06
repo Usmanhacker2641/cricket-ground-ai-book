@@ -1,0 +1,163 @@
+/* Time Slot Picker Styles */
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.title svg {
+    color: var(--primary-500);
+}
+
+.legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--foreground-secondary);
+}
+
+.legendDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+}
+
+.legendDot.available {
+    background: var(--success);
+}
+
+.legendDot.booked {
+    background: var(--error);
+}
+
+.legendDot.selected {
+    background: var(--primary-500);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--background-secondary);
+    border: 2px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.slot:hover:not(.slotBooked) {
+    border-color: var(--primary-400);
+    background: var(--primary-50);
+}
+
+[data-theme="dark"] .slot:hover:not(.slotBooked) {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.slotTime {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.slotIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.slotAvailable {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.slotAvailable .slotIcon {
+    color: var(--success);
+}
+
+.slotBooked {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.slotBooked .slotTime {
+    text-decoration: line-through;
+    color: var(--foreground-secondary);
+}
+
+.slotBooked .slotIcon {
+    color: var(--error);
+}
+
+.slotSelected {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.slotSelected .slotTime,
+.slotSelected .slotIcon {
+    color: white;
+}
+
+.loading {
+    background: linear-gradient(90deg,
+            var(--glass-bg) 25%,
+            var(--card-bg) 50%,
+            var(--glass-bg) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .legend {
+        gap: 1rem;
+    }
+}

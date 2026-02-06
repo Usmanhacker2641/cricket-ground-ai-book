@@ -1,0 +1,32 @@
+/* Theme Toggle Styles */
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    color: var(--foreground);
+    transition: all var(--transition-fast);
+}
+
+.toggle:hover {
+    background: var(--primary-100);
+    color: var(--primary-600);
+    border-color: var(--primary-200);
+}
+
+[data-theme="dark"] .toggle:hover {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--primary-400);
+    border-color: var(--primary-600);
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

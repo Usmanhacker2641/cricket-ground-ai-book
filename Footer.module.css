@@ -1,0 +1,202 @@
+/* Footer Styles */
+.footer {
+    background: var(--background-secondary);
+    border-top: 1px solid var(--glass-border);
+    padding-top: 4rem;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 3rem;
+}
+
+/* Brand Section */
+.brand {
+    max-width: 300px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.logo svg {
+    color: var(--primary-500);
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--foreground-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.socials {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--foreground-secondary);
+    transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+    background: var(--primary-500);
+    border-color: var(--primary-500);
+    color: white;
+}
+
+/* Links Section */
+.linksSection h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 1.25rem;
+}
+
+.linksSection ul {
+    list-style: none;
+}
+
+.linksSection li {
+    margin-bottom: 0.75rem;
+}
+
+.linksSection a {
+    font-size: 0.9rem;
+    color: var(--foreground-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.linksSection a:hover {
+    color: var(--primary-500);
+}
+
+/* Contact Section */
+.contactSection h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 1.25rem;
+}
+
+.contactList {
+    list-style: none;
+}
+
+.contactList li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--foreground-secondary);
+}
+
+.contactList svg {
+    color: var(--primary-500);
+    flex-shrink: 0;
+}
+
+.contactList a {
+    color: var(--foreground-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.contactList a:hover {
+    color: var(--primary-500);
+}
+
+/* Bottom Bar */
+.bottomBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.bottomBar p {
+    font-size: 0.85rem;
+    color: var(--foreground-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .brand {
+        grid-column: span 3;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .brand {
+        grid-column: span 2;
+    }
+
+    .bottomBar {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .brand {
+        grid-column: span 1;
+    }
+
+    .linksSection,
+    .contactSection {
+        text-align: center;
+    }
+
+    .contactList li {
+        justify-content: center;
+    }
+}

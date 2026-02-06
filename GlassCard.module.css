@@ -1,0 +1,25 @@
+/* Glass Card Styles */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.hoverEnabled {
+    cursor: pointer;
+}
+
+.hoverEnabled:hover {
+    background: var(--card-bg);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+[data-theme="dark"] .hoverEnabled:hover {
+    border-color: var(--primary-700);
+}

@@ -1,0 +1,222 @@
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all var(--transition-normal);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0.75rem 0;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    text-decoration: none;
+}
+
+.logo svg {
+    color: var(--primary-500);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navLink {
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--foreground-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+    color: var(--primary-500);
+}
+
+.navLink.active {
+    color: var(--primary-600);
+}
+
+.activeIndicator {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: var(--primary-500);
+    border-radius: 2px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.authButtons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.userMenu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.userBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--glass-bg);
+    border-radius: 8px;
+    color: var(--foreground);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.userBtn:hover {
+    background: var(--primary-100);
+    color: var(--primary-600);
+}
+
+[data-theme="dark"] .userBtn:hover {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--foreground-secondary);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+}
+
+.logoutBtn:hover {
+    background: var(--error);
+    color: white;
+}
+
+/* Mobile Menu Button */
+.mobileMenuBtn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background var(--transition-fast);
+}
+
+.mobileMenuBtn:hover {
+    background: var(--glass-bg);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.mobileNavLink {
+    display: block;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--foreground-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+    background: var(--primary-100);
+    color: var(--primary-600);
+}
+
+[data-theme="dark"] .mobileNavLink:hover,
+[data-theme="dark"] .mobileNavLink.active {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.mobileAuthButtons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.mobileAuthButtons .btn {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .desktopNav {
+        display: none;
+    }
+
+    .authButtons {
+        display: none;
+    }
+
+    .mobileMenuBtn {
+        display: flex;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
